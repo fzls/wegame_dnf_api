@@ -55,7 +55,7 @@ class WegameApi:
             }, f, ensure_ascii=False)
 
     def is_token_still_valid(self):
-        res = self.get_player_role_list()
+        res = self.get_player_role_list(print_res=False)
         return res["data"]["result"] == 0
 
     def get_token_file(self, account):
@@ -112,11 +112,11 @@ class WegameApi:
             "User-Agent": "okhttp/3.11.0",
         }
 
-    def get_player_role_list(self):
+    def get_player_role_list(self, print_res=True):
         """
         获取玩家所有区服的的角色列表
         """
-        return self._post("get_player_role_list", need_role_info=False).json()
+        return self._post("get_player_role_list", need_role_info=False, print_res=print_res).json()
 
     def set_role_info(self, area_id, role_name):
         """
