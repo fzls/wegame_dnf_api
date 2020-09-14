@@ -216,7 +216,7 @@ if __name__ == '__main__':
 
     res = api.get_player_role_list()
     for role in res['data']['role_list']:
-        print(role['area_id'], role['role_name'])
+        print("区服={:3d}\t角色名={}".format(role['area_id'], role['role_name']))
     default_role = res['data']['role_list'][0]
     area_id, role_name = default_role['area_id'], default_role['role_name']
     api.set_role_info(area_id, role_name)
