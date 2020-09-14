@@ -1,0 +1,2 @@
+# wegame_dnf_api
+使用wegame相关接口来查询dnf账号和角色的相关信息
